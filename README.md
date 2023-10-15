@@ -9,6 +9,8 @@ and testers to analyze [HTTP](https://en.wikipedia.org/wiki/HTTP) requests and s
 Developers can identify problems that occurred during testing on one or multiple clients without requiring physical
 access to the client machines.
 
+You can find the client software [here](https://github.com/gregor-gottschewski/mitmfox-client).
+
 ## How does it work?
 
 The client machine runs a Python script (MitmFox Client) that intercepts network data via a
