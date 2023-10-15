@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0"
+            prefWidth="850.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.gregorgott.mitmfoxserver.ui.MainWindowController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <Menu mnemonicParsing="false" text="%menuItem.menubar.file">
+                <MenuItem fx:id="saveMenuItem" disable="true" mnemonicParsing="false" onAction="#onSaveButton"
+                          text="%menuItem.menubar.file.save">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#onSaveAsButton" text="%menuItem.menubar.file.saveAs">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#onOpenButton" text="%menuItem.menubar.file.open">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" text="%menuItem.menubar.file.quit" onAction="#quit">
+                    <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP"/>
+                    </accelerator>
+                </MenuItem>
+            </Menu>
+            <Menu mnemonicParsing="false" text="%menuItem.menubar.server">
+                <MenuItem mnemonicParsing="false" onAction="#startThread" text="%menuItem.menubar.server.start"/>
+                <MenuItem mnemonicParsing="false" onAction="#stopThread" text="%menuItem.menubar.server.stop"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+            <BorderPane.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </BorderPane.margin>
+            <Label fx:id="entriesLabel"/>
+            <Label fx:id="statusLabel" textFill="#8a8a8a"/>
+        </HBox>
+    </bottom>
+    <center>
+        <BorderPane BorderPane.alignment="CENTER">
+            <center>
+                <SplitPane dividerPositions="0.7">
+                    <ScrollPane fx:id="tableScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER"/>
+                    <ScrollPane fitToWidth="true">
+                        <VBox spacing="15.0">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                            </padding>
+                            <VBox fx:id="requestInfoVBox" spacing="5.0">
+                                <Label text="%label.request"/>
+                            </VBox>
+                            <VBox fx:id="responseInfoVBox" spacing="5.0">
+                                <HBox spacing="5.0">
+                                    <Label text="%label.response"/>
+                                    <Label/>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                    </ScrollPane>
+                </SplitPane>
+            </center>
+            <top>
+            <BorderPane BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+               <left>
+                  <Button mnemonicParsing="false" onAction="#onDeleteDataButton" text="%button.deleteData"
+                          BorderPane.alignment="CENTER" />
+               </left>
+               <right>
+                   <HBox alignment="CENTER_RIGHT" spacing="10.0" BorderPane.alignment="CENTER">
+                       <TextField fx:id="searchTextField" prefWidth="250.0" promptText="%textField.promptText.search"/>
+                       <Button mnemonicParsing="false" onAction="#onSearchButton" text="%button.search"/>
+                   </HBox>
+               </right>
+            </BorderPane>
+            </top>
+        </BorderPane>
+    </center>
+</BorderPane>

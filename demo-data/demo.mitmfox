@@ -1,0 +1,46 @@
+[
+  {
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "requestHeader": "{\"user-agent\": \"InternetBrowser/5.0\", \"accept\": \"text/html,application/xhtml+xml,application/xml;q\\u003d0.9,image/avif,image/webp,*/*;q\\u003d0.8\", \"accept-language\": \"en-GB,en;q\\u003d0.5\"}",
+    "requestBody": "",
+    "url": "https://not-a-real-website.org/",
+    "responseHeader": "{\"date\": \"Thu, 12 Oct 2023 16:16:47 GMT\", \"content-type\": \"text/html; charset\\u003dutf-8\"}",
+    "responseBody": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>Not A Real Website</title></head><style>p {color: red;}</style><body><h1>Hello World</h1><hr><p>How was your day?</p></body></html>",
+    "responseStatusCode": 200,
+    "time": "2023-10-12 18.16.47.7"
+  },
+  {
+    "ip": "127.0.0.1",
+    "method": "POST",
+    "requestHeader": "{\"user-agent\": \"InternetBrowser/5.0\", \"accept\": \"text/html,application/xhtml+xml,application/xml;q\\u003d0.9,image/avif,image/webp,*/*;q\\u003d0.8\", \"accept-language\": \"en-GB,en;q\\u003d0.5\"}",
+    "requestBody": "{\"secret-password\":\"JavaIsGreat\"}",
+    "url": "https://top-secret-website.secret/",
+    "responseHeader": "{\"date\": \"Thu, 12 Oct 2023 20:15:40 GMT\", \"content-type\": \"text/html; charset\\u003dutf-8\"}",
+    "responseBody": "success",
+    "responseStatusCode": 200,
+    "time": "2023-10-12 20.15.40.2"
+  },
+  {
+    "ip": "127.0.0.1",
+    "method": "GET",
+    "requestHeader": "{\"user-agent\": \"InternetBrowser/5.0\", \"accept\": \"text/html,application/xhtml+xml,application/xml;q\\u003d0.9,image/avif,image/webp,*/*;q\\u003d0.8\", \"accept-language\": \"en-GB,en;q\\u003d0.5\"}",
+    "requestBody": "",
+    "url": "https://funy-funny-24-7.org/",
+    "responseHeader": "{\"date\": \"Thu, 12 Oct 2023 20:16:30 GMT\", \"content-type\": \"text/html; charset\\u003dutf-8\"}",
+    "responseBody": "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><title>Funny</title></head><style>p {color: red;}</style><body><h1>Here comes the joke</h1><hr><p>A programmer had a problem. He decided to use Java. He now has a ProblemFactory.</p></body></html>",
+    "responseStatusCode": 200,
+    "time": "2023-10-12 20.16.30.7"
+  },
+  {
+    "ip": "127.0.0.1",
+    "method": "POST",
+    "requestHeader": "{\"user-agent\": \"InternetBrowser/5.0\", \"accept\": \"text/html,application/xhtml+xml,application/xml;q\\u003d0.9,image/avif,image/webp,*/*;q\\u003d0.8\", \"accept-language\": \"en-GB,en;q\\u003d0.5\"}",
+    "requestBody": "{\"password\":\"7c4a8d09ca3762af61e59520943dc26494f8941b\"}",
+    "url": "https://do-not-use-weak-passwords.org/login",
+    "responseHeader": "{\"date\": \"Thu, 12 Oct 2023 23:00:00 GMT\", \"content-type\": \"text/html; charset\\u003dutf-8\"}",
+    "responseBody": "success",
+    "responseStatusCode": 200,
+    "time": "2023-10-12 23.00.00.0"
+  }
+]
