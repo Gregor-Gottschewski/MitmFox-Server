@@ -34,10 +34,8 @@ public class RequestAndResponse {
         );
     }
 
-    public RequestAndResponse(
-            String ip, String method, String requestHeader, String requestBody, String url,
-            String responseHeader, String responseBody, int responseStatusCode, LocalDateTime time
-    ) {
+    public RequestAndResponse(String ip, String method, String requestHeader, String requestBody, String url,
+                              String responseHeader, String responseBody, int responseStatusCode, LocalDateTime time) {
         this.ip = new SimpleStringProperty(ip);
         this.url = new SimpleStringProperty(url);
         this.method = new SimpleStringProperty(method);
@@ -87,6 +85,7 @@ public class RequestAndResponse {
     public String getResponseBody() {
         return responseBody.get();
     }
+
     public String getResponseBodyShortened() {
         return shortString(getResponseBody());
     }

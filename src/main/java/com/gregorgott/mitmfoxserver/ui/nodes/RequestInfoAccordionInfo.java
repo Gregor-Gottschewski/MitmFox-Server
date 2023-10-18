@@ -13,9 +13,7 @@ public class RequestInfoAccordionInfo extends InfoTitledPanesAccordion {
         InfoTitledPane infoTitledPane = new InfoTitledPane(I18N.getString("url"));
 
         Button openInBrowserButton = new Button(I18N.getString("button.openInBrowser"));
-        openInBrowserButton.setOnAction(actionEvent -> {
-            MitmFoxServer.hostServices.showDocument(infoTitledPane.getCodeArea().getText());
-        });
+        openInBrowserButton.setOnAction(actionEvent -> MitmFoxServer.hostServices.showDocument(infoTitledPane.getCodeArea().getText()));
 
         infoTitledPane.getTopHBox().getChildren().add(openInBrowserButton);
 

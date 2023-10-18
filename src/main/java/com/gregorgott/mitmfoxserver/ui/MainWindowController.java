@@ -4,7 +4,9 @@ import com.gregorgott.mitmfoxserver.MitmFoxServer;
 import com.gregorgott.mitmfoxserver.io.SaveLoadHandler;
 import com.gregorgott.mitmfoxserver.ui.alerts.SetPortAlert;
 import com.gregorgott.mitmfoxserver.ui.i18n.I18N;
-import com.gregorgott.mitmfoxserver.ui.nodes.*;
+import com.gregorgott.mitmfoxserver.ui.nodes.DataTable;
+import com.gregorgott.mitmfoxserver.ui.nodes.RequestInfoAccordionInfo;
+import com.gregorgott.mitmfoxserver.ui.nodes.ResponseInfoAccordion;
 import com.gregorgott.mitmfoxserver.ui.utils.SearchHandler;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -129,10 +131,7 @@ public class MainWindowController {
     private void quit() {
         Stage stage = (Stage) MitmFoxServer.rootWindow;
         stage.fireEvent(
-                new WindowEvent(
-                        stage,
-                        WindowEvent.WINDOW_CLOSE_REQUEST
-                )
+                new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST)
         );
     }
 

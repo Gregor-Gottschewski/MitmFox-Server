@@ -16,10 +16,9 @@ public class SelectionModelListenerUpdateService {
     private final RequestInfoAccordionInfo requestInfoAccordion;
     private final List<Thread> threadList;
 
-    public SelectionModelListenerUpdateService(
-            RequestInfoAccordionInfo requestInfoAccordion, ResponseInfoAccordion responseInfoAccordion,
-            RequestAndResponse requestAndResponse
-    ) {
+    public SelectionModelListenerUpdateService(RequestInfoAccordionInfo requestInfoAccordion,
+                                               ResponseInfoAccordion responseInfoAccordion,
+                                               RequestAndResponse requestAndResponse) {
         this.requestInfoAccordion = requestInfoAccordion;
         this.responseInfoAccordion = responseInfoAccordion;
         this.requestAndResponse = requestAndResponse;

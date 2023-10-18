@@ -9,7 +9,6 @@ import com.gregorgott.mitmfoxserver.ui.RequestAndResponse;
 import javafx.scene.control.Alert;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-import javafx.stage.Window;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -17,7 +16,6 @@ import java.util.List;
 
 public class SaveLoadHandler {
     private final Gson gson;
-    private final Window root;
 
     public static void showIoError(IOException e) {
         Alert alert = new Alert(Alert.AlertType.ERROR, "IO Error");
@@ -38,7 +36,7 @@ public class SaveLoadHandler {
         File file = fileChooser.showSaveDialog(MitmFoxServer.rootWindow);
 
         if (file != null) {
-            try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
+            try (BufferedWriter bw = new BufferedWriter(new FileWriter(file))) {
                 bw.write(s);
             }
         }
@@ -58,11 +56,10 @@ public class SaveLoadHandler {
         gson = new GsonBuilder()
                 .registerTypeAdapter(RequestAndResponse.class, new InterceptedDataTypeAdapter())
                 .create();
-        root = MitmFoxServer.rootWindow;
     }
 
     public void saveAs() throws IOException {
-        File file = createFileChooser().showSaveDialog(root);
+        File file = createFileChooser().showSaveDialog(MitmFoxServer.rootWindow);
         save(file);
     }
 
@@ -84,7 +81,7 @@ public class SaveLoadHandler {
     }
 
     public void load() throws IOException {
-        File file = createFileChooser().showOpenDialog(root);
+        File file = createFileChooser().showOpenDialog(MitmFoxServer.rootWindow);
 
         if (file == null) {
             return;

@@ -30,13 +30,8 @@ public class PostMethod extends Method {
     }
 
     private String readRequestBody(InputStream inputStream) throws IOException {
-        try (
-                BufferedReader br = new BufferedReader(
-                        new InputStreamReader(inputStream, StandardCharsets.UTF_8)
-                )
-        ) {
-            return br
-                    .lines()
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
+            return br.lines()
                     .collect(Collectors.joining("\n"));
         }
     }

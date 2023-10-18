@@ -30,6 +30,7 @@ public class SetPortAlert extends Alert {
     public int showAndGetPort() {
         Optional<ButtonType> result = this.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
+            // TODO: 18.10.2023 handle NumberFormatException ?
             return Integer.parseInt(textField.getText());
         }
 

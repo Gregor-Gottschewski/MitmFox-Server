@@ -7,7 +7,6 @@ import java.io.File;
 
 public class WorkspaceService {
     private File currentFile;
-    private boolean fileOpen;
 
     public WorkspaceService() {
     }
@@ -17,13 +16,12 @@ public class WorkspaceService {
     }
 
     public boolean isFileOpen() {
-        return fileOpen;
+        return currentFile != null;
     }
 
     public void setCurrentFile(File currentFile) {
         this.currentFile = currentFile;
-        fileOpen = currentFile != null;
-        if (fileOpen) {
+        if (isFileOpen()) {
             ((Stage) MitmFoxServer.rootWindow).setTitle("MitmFox Server - " + currentFile.getName());
         }
     }
