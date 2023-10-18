@@ -146,12 +146,9 @@ public class MainWindowController {
 
         table = new DataTable(requestInfoAccordion, responseInfoAccordion);
         table.tableSizeIntegerPropertyProperty().addListener(
-                (value, old, newNum) -> {
-                    Platform.runLater(() -> {
-                        entriesLabel.setText(
-                                newNum.intValue() + " " + I18N.getString("label.entries"));
-                    });
-                }
+                (value, old, newNum) -> Platform.runLater(
+                        () -> entriesLabel.setText(newNum.intValue() + " " + I18N.getString("label.entries"))
+                )
         );
 
         setStatusLabel(I18N.getString("label.stopped"));
