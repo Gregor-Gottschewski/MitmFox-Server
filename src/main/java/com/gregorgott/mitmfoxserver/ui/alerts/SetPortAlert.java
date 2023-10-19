@@ -30,11 +30,31 @@ public class SetPortAlert extends Alert {
     public int showAndGetPort() {
         Optional<ButtonType> result = this.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.APPLY) {
-            // TODO: 18.10.2023 handle NumberFormatException ?
-            return Integer.parseInt(textField.getText());
+            try {
+                int port = Integer.parseInt(textField.getText());
+
+                if (!isPortValid(port)) {
+                    throw new IllegalArgumentException("Specified port not valid");
+                }
+
+                return port;
+            } catch (IllegalArgumentException e) {
+                showPortNotValidAlert();
+            }
         }
 
         return 0;
+    }
+
+    private boolean isPortValid(int port) {
+        return port > 0 && port < 65535;
+    }
+
+    private void showPortNotValidAlert() {
+        Alert alert = new Alert(AlertType.ERROR, I18N.getString("alert.error.title"));
+        alert.setHeaderText(I18N.getString("alert.error.portNotValid.header"));
+        alert.setContentText(I18N.getString("alert.error.portNotValid.content"));
+        alert.showAndWait();
     }
 
     private VBox getCenterVBox() {
